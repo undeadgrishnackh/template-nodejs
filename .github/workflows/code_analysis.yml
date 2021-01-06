@@ -1,0 +1,36 @@
+name: SonarCloud and CodeCov analysis
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  sonarcloud:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Jest for coverage report
+        uses: stefanoeb/jest-action@1.0.2
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
+  #NOTE1: to enable the GitHub Action is necessary disable the SonarCloud auto-analysis toggle in the administration panel
+
+  CodeCov:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run Jest for coverage report
+        uses: stefanoeb/jest-action@1.0.2
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/clover.xml
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false
+  #NOTE: CODECOV_TOKEN must be injected into the repo after having created the repo in codecov
