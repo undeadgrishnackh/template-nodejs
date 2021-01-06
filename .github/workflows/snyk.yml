@@ -1,4 +1,4 @@
-name: Vulnerability Scan with Snyk
+name: Vulnerability Scan with Snyk.
 on: push
 jobs:
   security:
