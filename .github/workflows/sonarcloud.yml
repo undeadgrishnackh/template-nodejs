@@ -1,4 +1,4 @@
-name: SonarCloud analysis
+name: SonarCloud code base analysis.
 on: push
 jobs:
   sonarcloud:

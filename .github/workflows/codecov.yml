@@ -1,4 +1,4 @@
-name: CodeCov analysis
+name: CodeCov coverage analysis.
 on: push
 jobs:
   CodeCov:
