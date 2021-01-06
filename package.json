@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "jest --coverage"
+  "scripts": {    
+    "test": "jest  --coverage --verbose",    
+    "watch": "jest --watchAll --coverage --verbose"
   },
   "repository": {
     "type": "git",
