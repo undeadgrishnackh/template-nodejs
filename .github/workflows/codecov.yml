@@ -1,19 +1,6 @@
-name: SonarCloud and CodeCov analysis
+name: CodeCov analysis
 on: push
 jobs:
-  sonarcloud:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run Jest for coverage report
-        uses: stefanoeb/jest-action@1.0.2
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  #NOTE1: SONAR_TOKE must be injected from sonarcloud setting panel
-
   CodeCov:
     runs-on: ubuntu-latest
     steps:
@@ -33,3 +20,4 @@ jobs:
           flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: true
+  #NOTE: for public repository the token seems not necessary
