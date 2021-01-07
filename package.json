@@ -18,8 +18,7 @@
     "url": "https://github.com/undeadgrishnackh/template-nodejs/issues"
   },
   "homepage": "https://github.com/undeadgrishnackh/template-nodejs#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^26.6.3",
     "babel-eslint": "^10.1.0",
