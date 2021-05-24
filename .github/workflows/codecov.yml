@@ -20,4 +20,5 @@ jobs:
           flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: true
+          override_branch: main
   #NOTE: for public repository the token seems not necessary

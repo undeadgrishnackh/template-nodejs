@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Jest for coverage report
-        uses: stefanoeb/jest-action@1.0.2
+        uses: stefanoeb/jest-action@1.0.4
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
