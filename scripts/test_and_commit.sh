@@ -16,8 +16,8 @@ build_git_commit_message() {
 }
 
 git_commit() {
-  echo git add --all
-  echo git commit -m "\"$1\""
+  git add --all
+  git commit -m "$1"
 }
 
 jest_test
