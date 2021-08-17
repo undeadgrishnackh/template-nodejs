@@ -5,11 +5,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run Jest for coverage report
-        uses: stefanoeb/jest-action@1.0.4
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15'
+
+      - name: Node install dependencies
+        run: npm install
+
+      - name: Run unit tests
+        run: npm run testNoGitCommit
+        
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  #NOTE: SONAR_TOKEN must be injected from sonarcloud setting panel into the repository
