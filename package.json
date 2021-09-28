@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "scripts/test_and_commit.sh",
+    "testNoGitCommitE2E": "npx cucumber-js",
     "testNoGitCommit": "jest  --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
     "lint": "eslint --cache --fix"
@@ -34,6 +35,8 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@cucumber/cucumber": "^7.3.1",
+    "@cucumber/pretty-formatter": "^1.0.0-alpha.1",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.17.0",
     "eslint-config-airbnb": "^18.2.1",

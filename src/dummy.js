@@ -1,2 +1,4 @@
 class Dummy {}
-module.exports = Dummy;
+const sandbox = () => 'Nope';
+
+module.exports = { Dummy, sandbox };
