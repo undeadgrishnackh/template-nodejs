@@ -37,4 +37,4 @@ run_unit_tests
 UNIT_TEST_RESULT=$?
 echo
 MESSAGE=$(build_git_commit_message $E2E_TEST_RESULT $UNIT_TEST_RESULT)
-echo git_commit "$MESSAGE"
+git_commit "$MESSAGE"

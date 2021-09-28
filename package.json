@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "scripts/test_and_commit.sh",
-    "testNoGitCommitE2E": "npx cucumber-js",
+    "testNoGitCommitE2E": "npx cucumber-js --publish-quiet --fail-fast",
     "testNoGitCommit": "jest  --coverage --verbose",
     "watch": "jest --watchAll --coverage --verbose",
     "lint": "eslint --cache --fix"
